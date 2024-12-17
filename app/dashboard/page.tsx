@@ -18,6 +18,24 @@ export default async function Page() {
     numberOfCustomers,
   } = await fetchCardData();
 
+  // Parallel requests to improve performance
+  // const data = await Promise.all([
+  //   fetchRevenue(),
+  //   fetchLatestInvoices(),
+  //   fetchCardData(),
+  // ]);
+
+  // console.log("data: ", data);
+
+  // const revenue = data[0];
+  // const latestInvoices = data[1];
+  // const {
+  //   totalPaidInvoices,
+  //   totalPendingInvoices,
+  //   numberOfInvoices,
+  //   numberOfCustomers,
+  // } = data[2];
+
   return (
     <main>
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
